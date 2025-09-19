@@ -42,7 +42,7 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `cond_disc_list_allO.m`: list of all (not just maximal) imaginary quadratic orders of class number up to $100$. The $i^\text{th}$ element is the complete list of sequences $[f,d_K] = [\text{conductor}, \text{fundamental disc}]$ for imaginary quadratic orders of class number $i$. Generated using list of maximal orders by M. Watkins. In this work, we only really use the first two elements of this list, giving the orders of class numbers $1$ and $2$, in the file `depth_1_CM_residue_field.m`.
 
-- `depth_1_CM_residue_field.m`: The main function in this file is for computing the residue field of a given CM point on an Atkin--Lehner quotient of the form $X_0^D(N)/<w_m>$ with $N squarefree$, $D>1$, and $m>1$ a Hall Divisor of $DN$. This is done using Corollary 5.14 of Gonzalez--Rotger 2006. Part of our code in the main function, in particular the functionality for taking the correct fixed fields, and the function `ExtendAutomorphism` is borrowed from the file `CMfunctions.m` in the repository for Padurariu--Schembri 2023 [linked here](https://github.com/ciaran-schembri/Shimura/blob/main/CMfunctions.m).
+- `depth_1_CM_residue_field.m`: The main function in this file is for computing the residue field of a given CM point on an Atkin--Lehner quotient of the form $X_0^D(N)/<w_m>$ with $N$ squarefree, $D>1$, and $m>1$ a Hall Divisor of $DN$. This is done using Corollary 5.14 of Gonzalez--Rotger 2006. Part of our code in the main function, in particular the functionality for taking the correct fixed fields, and the function `ExtendAutomorphism` is borrowed from the file `CMfunctions.m` in the repository for Padurariu--Schembri 2023 [linked here](https://github.com/ciaran-schembri/Shimura/blob/main/CMfunctions.m).
 
 - `ribet_isog.m`: Code for computing isogeny factors of the Jacobian of an Atkin-Lehner quotient $X_0^D(N)/W$ using Ribet's isogeny.
 
@@ -88,9 +88,9 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `genus_1_AL_quotient_jacobian_isomorphism_classes.m`: For each triple $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` with $N$ squarefree, we list the Cremona reference of the elliptic curve $\text{Jac}(X_0^D(N))$.
 
-- `non_elliptic_genus_one_equation_determined_final.m`: For $146$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide a polynomial $f(x)$ so that $y^2=f(x)$ is a model over $\Q$ for $X$.
+- `non_elliptic_genus_one_equation_determined_final.m`: For $146$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide a polynomial $f(x)$ so that $y^2=f(x)$ is a model over $\mathbb{Q}$ for $X$.
 
-- `non_elliptic_genus_one_equation_not_determined_final.m`: For $4$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide polynomial $f_1(x)$ and $f_2(x)$ so that exactly one of $y^2=f_1(x)$ or $y^2=f_2(x)$ is a model over $\Q$ for $X$.
+- `non_elliptic_genus_one_equation_not_determined_final.m`: For $4$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide polynomial $f_1(x)$ and $f_2(x)$ so that exactly one of $y^2=f_1(x)$ or $y^2=f_2(x)$ is a model over $\mathbb{Q}$ for $X$.
 
 - `genus_two_bielliptics_one_AL.m`: The list of all $251$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly one bielliptic involution which is Atkin--Lehner.
 
