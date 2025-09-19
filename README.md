@@ -94,9 +94,9 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final.m`: The list of all $17$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point in the files `unknown_non_elliptic_eqn_computations.m` and `unknown_non_elliptic_fixed_pt_fld_checks.m`.
 
-- `genus_two_bielliptics_one_AL.m`: The list of all $251$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly one bielliptic involution which is Atkin--Lehner.
+- `genus_2_bielliptics_one_AL.m`: The list of all $251$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly one bielliptic involution which is Atkin--Lehner.
 
-- `genus_two_bielliptics_two_AL.m`: The list of all $388$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly two bielliptic involutions which are Atkin--Lehner.
+- `genus_2_bielliptics_two_AL.m`: The list of all $388$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly two bielliptic involutions which are Atkin--Lehner.
 
 - `genus_2_remaining_non_AL_bielliptic_candidates_final.m`: The list of all $76$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has no bielliptic involutions which are Atkin--Lehner and we do not prove whether $X_0^D(N)/W$ is bielliptic.
 
