@@ -2,7 +2,7 @@
 // `genus_1_AL_quotients_rat_pts.m` for which $\Jac(X_0^D(N)/W)$ has 
 // positive rank over $\mathbb{Q}$. 
 
-genus_1_AL_quotients_rat_pts_pos_rank_final := 
+genus_1_AL_quotients_rat_pts_pos_rank := 
 [ [* 6, 17,
     { 102 }
 *], [* 6, 17,
