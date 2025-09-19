@@ -14,6 +14,24 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `Kodaira_computations.m`: In this code, we compute Kodaira symbols for each genus $1$ curve $X_0^D(N)/W$ with $N$ squarefree at all primes $p \mid D$ using the relevant function in `dual_graphs.m`.
 
+- `genus_1_isog_class_checks.m`: Code for computing the isogeny class of $\text{Jac}(X)$ for each curve listed in `genus_1_AL_quotients.m`.
+
+- `genus_1_isomorphism_class_checks.m`: Code for computing the isomorphism class of $\text{Jac}(X)$ for each curve listed in `genus_1_AL_quotients.m` with $N$ squarefree.
+
+- `non_elliptic_genus_1_eqn_computations.m`: Code used for obtaining models for non-elliptic genus $1$ Atkin--Lehner quotients $X_0^D(N)/W$.
+
+- `non_elliptic_fixed_pt_fld_checks.m`: Code for excluding candidate models of non-elliptic genus $1$ curves via a check on the splitting field of the hyperelliptic polynomial.
+
+- `computing_genus_2_bielliptics.m`: In this file, we compute Atkin--Lehner quotients $X_0^D(N)$ which are genus $2$ and have at least one bielliptic Atkin--Lehner quotient. We also prove that many other genus $2$ quotients are not bielliptic.
+
+- `computing_genus_2_bielliptic_eqns.m`: Code for computing models of genus $2$ Atkin--Lehner quotients which have at least one bielliptic Atkin--Lehner involution.
+
+- `unknown_non_elliptic_eqn_computations.m`: In this file, we take Atkin--Lehner quotients $X_0^D(N)/W$ of genus $1$ for which we are otherwise unable to prove whether $X$ has a rational point and we attempt to use the same methods from `non_elliptic_genus_1_eqn_computations.m` to generate a finite list of candidate equations for $X$ assuming it is non-elliptic. We then use information about the existence of local points to exclude candidate equations. This is in the hopes of showing $X$ cannot be non-elliptic, i.e., must have a rational point. 
+
+- `unknown_non_elliptic_fixed_pt_fld_checks.m`: The work in this file continues the work done in `unknown_non_elliptic_eqn_computations.m`, performing the checks done in `non_elliptic_fixed_pt_fld_checks.m` for non-elliptic candidate models in hopes of excluding all candidates and thus proving that a given genus $1$ quotient $X_0^D(N)/W$ has a rational point. 
+
+
+
 ## Required Files
 
 - `quot_genus.m`: Code for computing genera of Atkin--Lehner quotients of $X_0^D(N)$ assuming $D>1$. The calculation uses Riemann--Hurwitz along with counts of fixed points of Atkin--Lehner involutions from work of Ogg.
@@ -60,8 +78,28 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `genus_1_AL_quotients_unknown_rat_pts.m`: The list of all $158$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
 
-- `genus_1_AL_quotients_rat_pts_pos_rank.m`: The list of all $537$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_rat_pts.m` for which $\Jac(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$. 
+- `genus_1_AL_quotients_rat_pts_pos_rank.m`: The list of all $537$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_rat_pts.m` for which $\text{Jac}(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$. 
 
-- `genus_1_AL_quotients_unknown_rat_pts_pos_rank.m`: The list of all $54$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_unknown_rat_pts.m` for which $\Jac(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$.
+- `genus_1_AL_quotients_unknown_rat_pts_pos_rank.m`: The list of all $54$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_unknown_rat_pts.m` for which $\text{Jac}(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$.
 
-- `genus_1_AL_quotient_symbols.m`: For each triple $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` with $N$ squarefree, we list the Kodaira symbols of $Jac(X_0^D(N)/W)$ at all primes $p \mid D$. This is output from `Kodaira_computations.m`. 
+- `genus_1_AL_quotient_symbols.m`: For each triple $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` with $N$ squarefree, we list the Kodaira symbols of $Jac(X_0^D(N)/W)$ at all primes $p \mid D$. This is output from `Kodaira_computations.m`.
+
+- `genus_1_jacobian_isog_classes.m`: For each triple $(D,N,\text{gens})$ in `genus_1_AL_quotients.m`, we list a member of the isogeny class of the elliptic curve $\text{Jac}(X_0^D(N))$.
+
+- `genus_1_AL_quotient_jacobian_isomorphism_classes.m`: For each triple $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` with $N$ squarefree, we list the Cremona reference of the elliptic curve $\text{Jac}(X_0^D(N))$.
+
+- `non_elliptic_genus_one_equation_determined_final.m`: For $146$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide a polynomial $f(x)$ so that $y^2=f(x)$ is a model over $\Q$ for $X$.
+
+- `non_elliptic_genus_one_equation_not_determined_final.m`: For $4$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide polynomial $f_1(x)$ and $f_2(x)$ so that exactly one of $y^2=f_1(x)$ or $y^2=f_2(x)$ is a model over $\Q$ for $X$.
+
+- `genus_two_bielliptics_one_AL.m`: The list of all $251$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly one bielliptic involution which is Atkin--Lehner.
+
+- `genus_two_bielliptics_two_AL.m`: The list of all $388$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly two bielliptic involutions which are Atkin--Lehner.
+
+- `genus_2_remaining_non_AL_bielliptic_candidates_final.m`: The list of all $76$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has no bielliptic involutions which are Atkin--Lehner and we do not prove whether $X_0^D(N)/W$ is bielliptic.
+
+- `genus_2_bielliptics_eqn_determined.m`: The list of all $405$ triples $[D,N,\text{gens}]$ appearing in either `genus_two_bielliptics_one_AL.m` or in `genus_two_bielliptics_two_AL.m` for which we determine a model for the corresponding curve $X_0^D(N)/W$ over $\mathbb{Q}$. 
+
+- `genus_2_bielliptics_eqn_not_determined.m`: The list of all $231$ triples $[D,N,\text{gens}]$ appearing in either `genus_two_bielliptics_one_AL.m` or in `genus_two_bielliptics_two_AL.m` for which we compute candidate models for $X_0^D(N)/W$ over $\mathbb{Q}$ but are not able to determine which candidate model is correct.
+
+- `genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final.m`: The list of all $17$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point in the files `unknown_non_elliptic_eqn_computations.m` and `unknown_non_elliptic_fixed_pt_fld_checks.m`.
