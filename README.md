@@ -14,9 +14,9 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `Kodaira_computations.m`: In this code, we compute Kodaira symbols for each genus $1$ curve $X_0^D(N)/W$ with $N$ squarefree at all primes $p \mid D$ using the relevant function in `dual_graphs.m`.
 
-- `genus_1_isog_class_checks.m`: Code for computing the isogeny class of $\text{Jac}(X)$ for each curve listed in `genus_1_AL_quotients.m`.
+- `genus_1_jacobian_isog_class_checks.m`: Code for computing the isogeny class of $\text{Jac}(X)$ for each curve listed in `genus_1_AL_quotients.m`.
 
-- `genus_1_isomorphism_class_checks.m`: Code for computing the isomorphism class of $\text{Jac}(X)$ for each curve listed in `genus_1_AL_quotients.m` with $N$ squarefree.
+- `genus_1_jacobian_isomorphism_class_checks.m`: Code for computing the isomorphism class of $\text{Jac}(X)$ for each curve listed in `genus_1_AL_quotients.m` with $N$ squarefree.
 
 - `non_elliptic_genus_1_eqn_computations.m`: Code used for obtaining models for non-elliptic genus $1$ Atkin--Lehner quotients $X_0^D(N)/W$.
 
