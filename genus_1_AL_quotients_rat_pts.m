@@ -1,7 +1,7 @@
 // The list of all $1040$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for 
 // which we prove $X_0^D(N)/W$ has a rational point.
 
-genus_1_AL_quotients_rat_pts_final := 
+genus_1_AL_quotients_rat_pts := 
 [ [* 6, 5,
     { 15 }
 *], [* 6, 5,
