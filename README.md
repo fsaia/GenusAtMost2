@@ -4,11 +4,15 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 ## Main Files
 
-- `dual_graphs.m`: The first two functions are heavily based on code by Jim Stankewicz for computing the dual graph of the special fiber at $p$ of the Shimura curve $X_0^{D}(N)/\langle w_p \rangle# over $\mathbb{Q}$, where $p \mid D$, $\gcd(D,N) = 1$, $N$ is squarefree, and $D$ is an indefinite quaternion discriminant (hence $D/p$ is a definite quaternion discriminant) over $\mathbb{Q}$. The remainder of the code in this file is dedicated to computing information about the dual graphs of general Atkin--Lehner quotients of $X_0^{D}(N)$ (including the trivial one) at $p \mid D$, including functions for computing Kodaira symbols in the $g=1$ case and for determining the existence of local points at primes $p \mid D$. 
+- `dual_graphs.m`: The first two functions are heavily based on code by Jim Stankewicz for computing the dual graph of the special fiber at $p$ of the Shimura curve $X_0^{D}(N)/\langle w_p \rangle$ over $\mathbb{Q}$, where $p \mid D$, $\gcd(D,N) = 1$, $N$ is squarefree, and $D$ is an indefinite quaternion discriminant (hence $D/p$ is a definite quaternion discriminant) over $\mathbb{Q}$. The remainder of the code in this file is dedicated to computing information about the dual graphs of general Atkin--Lehner quotients of $X_0^{D}(N)$ (including the trivial one) at $p \mid D$, including functions for computing Kodaira symbols in the $g=1$ case and for determining the existence of local points at primes $p \mid D$. 
 
 - `hyperelliptic_star_candidate_checks.m`: Code for determining the star quotients $X_0^D(N)^*$ of genus at most $2$.
 
 - `genus_le2_quotient_checks.m`: Code for determing the Atkin--Lehner quotients $X_0^D(N)/W$, with $W \leq W_0(D,N)$ not trivial, of genus at most $2$.
+
+- `rational_point_checks.m`: In this file we run tests of genus $0$ and genus $1$ Atkin--Lehner quotients for rational points. In particular, we conclude we do have rational points when we find rational CM points, when have genus $2$ double covers of genus $1$ curves, or when an Hasse--Minkowski argument succeeds in the genus $0$ case, and we conclude we lack rational points if we lack local points at some prime or over the reals. We then also handle some quotients for which we have equations from past work.
+
+- `Kodaira_computations.m`: In this code, we compute Kodaira symbols for each genus $1$ curve $X_0^D(N)/W$ with $N$ squarefree at all primes $p \mid D$ using the relevant function in `dual_graphs.m`.
 
 ## Required Files
 
@@ -20,7 +24,14 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `cond_disc_list_allO.m`: list of all (not just maximal) imaginary quadratic orders of class number up to $100$. The $i^\text{th}$ element is the complete list of sequences $[f,d_K] = [\text{conductor}, \text{fundamental disc}]$ for imaginary quadratic orders of class number $i$. Generated using list of maximal orders by M. Watkins. In this work, we only really use the first two elements of this list, giving the orders of class numbers $1$ and $2$, in the file `depth_1_CM_residue_field.m`.
 
-- `depth_1_CM_residue_field.m`: The main function in this file is for computing the residue field of a given CM point on an Atkin--Lehner quotient of the form $X_0^D(N)/<w_m>$ with $N squarefree$, $D>1$, and $m>1$ a Hall Divisor of $DN$. This is done using Corollary 5.14 of Gonzalez--Rotger 2006. Part of our code in the main function, in particular the functionality for taking the correct fixed fields, and the function `ExtendAutomorphism` is borrowed from the file `CMfunctions.m` in the repository for Padurariu--Schembri 2023 [linked here](https://github.com/ciaran-schembri/Shimura/blob/main/CMfunctions.m). 
+- `depth_1_CM_residue_field.m`: The main function in this file is for computing the residue field of a given CM point on an Atkin--Lehner quotient of the form $X_0^D(N)/<w_m>$ with $N squarefree$, $D>1$, and $m>1$ a Hall Divisor of $DN$. This is done using Corollary 5.14 of Gonzalez--Rotger 2006. Part of our code in the main function, in particular the functionality for taking the correct fixed fields, and the function `ExtendAutomorphism` is borrowed from the file `CMfunctions.m` in the repository for Padurariu--Schembri 2023 [linked here](https://github.com/ciaran-schembri/Shimura/blob/main/CMfunctions.m).
+
+- `ribet_isog.m`: Code for computing isogeny factors of the Jacobian of an Atkin-Lehner quotient $X_0^D(N)/W$ using Ribet's isogeny.
+
+- `aut_checks.m`: This file contains a function which uses results from Kontogeorgis--Rotger 2008 to prove certain curves $X_0^D(N)$ have no non-Atkin--Lehner automorphisms.
+
+- `all_atkin_lehner_10k.m`: List of $4718$ pairs $(D,N)$, all with $DN < 10000$$ for which it is proven that all automorphisms of $X_0^D(N)/W$ are Atkin--Lehner for each $W \leq W_0(D,N)$ in work of Mercuri--Padurariu--Saia--Stirpe 2025. 
+
 
 
 ## Computed Lists
@@ -36,3 +47,21 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 - `genus_1_AL_quotients.m`: The list of all $1352$ triples $[D,N,\text{gens}]$ such that, with $W \leq W_0(D,N)$ being generated by the $w_m$ for $m$ in gens, we have that $X_0^D(N)/W$ is a non-trivial quotient having genus $1$
 
 - `genus_2_AL_quotients.m`: The list of all $1580$ triples $[D,N,\text{gens}]$ such that, with $W \leq W_0(D,N)$ being generated by the $w_m$ for $m$ in gens, we have that $X_0^D(N)/W$ is a non-trivial quotient having genus $2$
+
+- `genus_0_AL_quotients_no_rat_pts.m`: The list of all $81$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we prove $X_0^D(N)/W$ has no rational points.
+
+- `genus_0_AL_quotients_rat_pts.m`: The list of all $643$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we prove $X_0^D(N)/W$ has a rational point.
+
+- `genus_0_AL_quotients_unknown_rat_pts.m`: The list of all $55$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
+
+- `genus_1_AL_quotients_no_rat_pts.m`: The list of all $154$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we prove $X_0^D(N)/W$ has no rational points.
+
+- `genus_1_AL_quotients_rat_pts.m`: The list of all $1040$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we prove $X_0^D(N)/W$ has a rational point.
+
+- `genus_1_AL_quotients_unknown_rat_pts.m`: The list of all $158$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
+
+- `genus_1_AL_quotients_rat_pts_pos_rank.m`: The list of all $537$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_rat_pts.m` for which $\Jac(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$. 
+
+- `genus_1_AL_quotients_unknown_rat_pts_pos_rank.m`: The list of all $54$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_unknown_rat_pts.m` for which $\Jac(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$.
+
+- `genus_1_AL_quotient_symbols.m`: For each triple $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` with $N$ squarefree, we list the Kodaira symbols of $Jac(X_0^D(N)/W)$ at all primes $p \mid D$. This is output from `Kodaira_computations.m`. 
