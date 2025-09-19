@@ -22,13 +22,13 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `non_elliptic_fixed_pt_fld_checks.m`: Code for excluding candidate models of non-elliptic genus $1$ curves via a check on the splitting field of the hyperelliptic polynomial.
 
+- `unknown_non_elliptic_eqn_computations.m`: In this file, we take Atkin--Lehner quotients $X_0^D(N)/W$ of genus $1$ for which we are otherwise unable to prove whether $X$ has a rational point and we attempt to use the same methods from `non_elliptic_genus_1_eqn_computations.m` to generate a finite list of candidate equations for $X$ assuming it is non-elliptic. We then use information about the existence of local points to exclude candidate equations. This is in the hopes of showing $X$ cannot be non-elliptic, i.e., must have a rational point.
+
+- `unknown_non_elliptic_fixed_pt_fld_checks.m`: The work in this file continues the work done in `unknown_non_elliptic_eqn_computations.m`, performing the checks done in `non_elliptic_fixed_pt_fld_checks.m` for non-elliptic candidate models in hopes of excluding all candidates and thus proving that a given genus $1$ quotient $X_0^D(N)/W$ has a rational point.
+
 - `computing_genus_2_bielliptics.m`: In this file, we compute Atkin--Lehner quotients $X_0^D(N)$ which are genus $2$ and have at least one bielliptic Atkin--Lehner quotient. We also prove that many other genus $2$ quotients are not bielliptic.
 
 - `computing_genus_2_bielliptic_eqns.m`: Code for computing models of genus $2$ Atkin--Lehner quotients which have at least one bielliptic Atkin--Lehner involution.
-
-- `unknown_non_elliptic_eqn_computations.m`: In this file, we take Atkin--Lehner quotients $X_0^D(N)/W$ of genus $1$ for which we are otherwise unable to prove whether $X$ has a rational point and we attempt to use the same methods from `non_elliptic_genus_1_eqn_computations.m` to generate a finite list of candidate equations for $X$ assuming it is non-elliptic. We then use information about the existence of local points to exclude candidate equations. This is in the hopes of showing $X$ cannot be non-elliptic, i.e., must have a rational point. 
-
-- `unknown_non_elliptic_fixed_pt_fld_checks.m`: The work in this file continues the work done in `unknown_non_elliptic_eqn_computations.m`, performing the checks done in `non_elliptic_fixed_pt_fld_checks.m` for non-elliptic candidate models in hopes of excluding all candidates and thus proving that a given genus $1$ quotient $X_0^D(N)/W$ has a rational point. 
 
 
 
@@ -92,6 +92,8 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `non_elliptic_genus_one_equation_not_determined_final.m`: For $4$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide polynomial $f_1(x)$ and $f_2(x)$ so that exactly one of $y^2=f_1(x)$ or $y^2=f_2(x)$ is a model over $\mathbb{Q}$ for $X$.
 
+- `genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final.m`: The list of all $17$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point in the files `unknown_non_elliptic_eqn_computations.m` and `unknown_non_elliptic_fixed_pt_fld_checks.m`.
+
 - `genus_two_bielliptics_one_AL.m`: The list of all $251$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly one bielliptic involution which is Atkin--Lehner.
 
 - `genus_two_bielliptics_two_AL.m`: The list of all $388$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly two bielliptic involutions which are Atkin--Lehner.
@@ -101,5 +103,3 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 - `genus_2_bielliptics_eqn_determined.m`: The list of all $405$ triples $[D,N,\text{gens}]$ appearing in either `genus_two_bielliptics_one_AL.m` or in `genus_two_bielliptics_two_AL.m` for which we determine a model for the corresponding curve $X_0^D(N)/W$ over $\mathbb{Q}$. 
 
 - `genus_2_bielliptics_eqn_not_determined.m`: The list of all $231$ triples $[D,N,\text{gens}]$ appearing in either `genus_two_bielliptics_one_AL.m` or in `genus_two_bielliptics_two_AL.m` for which we compute candidate models for $X_0^D(N)/W$ over $\mathbb{Q}$ but are not able to determine which candidate model is correct.
-
-- `genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final.m`: The list of all $17$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point in the files `unknown_non_elliptic_eqn_computations.m` and `unknown_non_elliptic_fixed_pt_fld_checks.m`.
