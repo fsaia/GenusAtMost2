@@ -1,7 +1,7 @@
-// The list of all $158$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` 
-// for which we prove $X_0^D(N)/W$ has a rational point.
+// The list of all $147$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` 
+// for which we do not prove whether $X_0^D(N)/W$ has a rational point.
 
-genus_1_AL_quotients_unknown_rat_pts := 
+genus_1_AL_quotients_unknown_rat_pts_final := 
 [ [* 6, 25,
     { 150 }
 *], [* 6, 25,
@@ -16,10 +16,6 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 3, 10, 46 }
 *], [* 6, 115,
     { 5, 6, 46 }
-*], [* 6, 119,
-    { 6, 7, 34 }
-*], [* 6, 143,
-    { 6, 11, 26 }
 *], [* 6, 155,
     { 2, 3, 155 }
 *], [* 6, 155,
@@ -102,8 +98,6 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 3, 40 }
 *], [* 15, 14,
     { 2, 5, 7 }
-*], [* 15, 22,
-    { 2, 5, 11 }
 *], [* 15, 26,
     { 2, 3, 65 }
 *], [* 15, 26,
@@ -116,8 +110,6 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 3, 10, 26 }
 *], [* 15, 26,
     { 6, 10, 13 }
-*], [* 15, 29,
-    { 15, 87 }
 *], [* 15, 34,
     { 3, 10, 34 }
 *], [* 15, 38,
@@ -126,12 +118,8 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 2, 3, 5, 41 }
 *], [* 21, 4,
     { 3, 7 }
-*], [* 21, 5,
-    { 3, 7 }
 *], [* 21, 8,
     { 7, 24 }
-*], [* 21, 10,
-    { 2, 3, 5 }
 *], [* 21, 16,
     { 3, 7, 16 }
 *], [* 21, 25,
@@ -160,8 +148,6 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 6, 7, 26 }
 *], [* 26, 25,
     { 2, 13, 25 }
-*], [* 33, 5,
-    { 5, 11 }
 *], [* 33, 14,
     { 2, 3, 77 }
 *], [* 33, 14,
@@ -178,8 +164,6 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 2, 17 }
 *], [* 34, 29,
     { 2, 17, 29 }
-*], [* 35, 3,
-    { 5, 7 }
 *], [* 35, 4,
     { 4, 35 }
 *], [* 35, 4,
@@ -190,14 +174,10 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 5, 7, 9 }
 *], [* 35, 26,
     { 2, 5, 7, 13 }
-*], [* 38, 3,
-    { 2, 19 }
 *], [* 38, 39,
     { 2, 3, 13, 19 }
 *], [* 39, 4,
     { 3, 13 }
-*], [* 39, 5,
-    { 15, 39 }
 *], [* 39, 10,
     { 2, 5, 39 }
 *], [* 39, 10,
@@ -220,8 +200,6 @@ genus_1_AL_quotients_unknown_rat_pts :=
     { 10, 74 }
 *], [* 77, 6,
     { 2, 3, 7, 11 }
-*], [* 82, 3,
-    { 3, 41 }
 *], [* 85, 6,
     { 2, 3, 5, 17 }
 *], [* 95, 3,
