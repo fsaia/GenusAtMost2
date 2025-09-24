@@ -1,14 +1,51 @@
+// The list of all $28$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for 
+// which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point 
+// in the files `unknown_non_elliptic_eqn_computations.m` and 
+// `unknown_non_elliptic_fixed_pt_fld_checks.m`.
+
 genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final := 
 [ [* 6, 35,
     { 5, 21 }
-*], [* 10, 7,
+*], [* 6, 119,
+    { 6, 7, 34 }
+*] ,
+[* 6, 143,
+    { 6, 11, 26 }
+*] ,
+[* 10, 7,
     { 2, 7 }
 *], [* 10, 21,
     { 10, 42 }
 *], [* 15, 13,
     { 3, 13 }
-*], [* 26, 5,
+*], [* 15, 22,
+    { 2, 5, 11 }
+*] ,
+[* 15, 29,
+    { 15, 87 }
+*] ,
+[* 21, 5,
+    { 3, 7 }
+*] ,
+[* 21, 10,
+    { 2, 3, 5 }
+*] ,
+[* 26, 5,
     { 2, 13 }
+*], [* 33, 5,
+    { 5, 11 }
+*] ,
+[* 35, 3,
+    { 5, 7 }
+*] ,
+[* 38, 3,
+    { 2, 19 }
+*] ,
+[* 39, 5,
+    { 15, 39 }
+*] ,
+[* 82, 3,
+    { 3, 41 }
 *], [* 210, 11,
     { 3, 10, 11, 14 }
 *], [* 210, 13,
