@@ -74,9 +74,9 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `genus_1_AL_quotients_no_rat_pts.m`: The list of all $154$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we prove $X_0^D(N)/W$ has no rational points.
 
-- `genus_1_AL_quotients_rat_pts.m`: The list of all $1040$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we prove $X_0^D(N)/W$ has a rational point.
+- `genus_1_AL_quotients_rat_pts.m`: The list of all $1051$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we prove $X_0^D(N)/W$ has a rational point.
 
-- `genus_1_AL_quotients_unknown_rat_pts.m`: The list of all $158$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
+- `genus_1_AL_quotients_unknown_rat_pts.m`: The list of all $147$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
 
 - `genus_1_AL_quotients_rat_pts_pos_rank.m`: The list of all $537$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients_rat_pts.m` for which $\text{Jac}(X_0^D(N)/W)$ has positive rank over $\mathbb{Q}$. 
 
@@ -92,7 +92,7 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `non_elliptic_genus_one_equation_not_determined_final.m`: For $4$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which $X = X_0^D(N)/W$ is non-elliptic, we provide polynomial $f_1(x)$ and $f_2(x)$ so that exactly one of $y^2=f_1(x)$ or $y^2=f_2(x)$ is a model over $\mathbb{Q}$ for $X$.
 
-- `genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final.m`: The list of all $17$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point in the files `unknown_non_elliptic_eqn_computations.m` and `unknown_non_elliptic_fixed_pt_fld_checks.m`.
+- `genus_1_AL_quotients_rat_pts_by_non_elliptic_test_final.m`: The list of all $28$ triples $(D,N,\text{gens})$ in `genus_1_AL_quotients.m` for which we prove that the corresponding curve $X_0^D(N)/W$ has a rational point in the files `unknown_non_elliptic_eqn_computations.m` and `unknown_non_elliptic_fixed_pt_fld_checks.m`.
 
 - `genus_2_bielliptics_one_AL.m`: The list of all $251$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly one bielliptic involution which is Atkin--Lehner.
 
