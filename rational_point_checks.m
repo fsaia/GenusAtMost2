@@ -432,36 +432,27 @@ genus_0_in_PS_GY := [triple : triple in genus_0_AL_quotients_unknown_rat_pts | [
 genus_1_in_PS_GY := [triple : triple in genus_1_AL_quotients_unknown_rat_pts | [triple[1],triple[2]] in ((genus_0 cat genus_1) cat (Q_gon_2 cat Qbar_gon_2))];
 
 
-// quotients with top curves in GR06 remaining to check: 
+// quotients with top curves in GR06 remaining to check
+// (the equations here are difficult to deal with by hand or in magma): 
 // genus 0:
-    [ [* 6, 5,
-        { 6 }
-    *], [* 6, 5,
-        { 2, 3 }
-    *], [* 6, 5,
-        { 2, 5 }
-    *], [* 6, 7,
-        { 2, 3 }
-    *], [* 6, 7,
-        { 3, 7 }
-    *], [* 6, 13,
-        { 3 }
-    *], [* 10, 3,
-        { 2, 3 }
-    *], [* 10, 7,
-        { 2, 5 }
-    *], [* 10, 7,
-        { 5, 7 }
-    *], [* 10, 7,
-        { 10, 14 } ]
-// genus 1:
-    // [ [* 10, 7,
-    //     { 2, 7 }
-    // *] ]
+    // [
+    // [* 10, 7,
+    //     { 2, 5 }
+    // *], [* 10, 7,
+    //     { 5, 7 }
+    // *], [* 10, 7,
+    //     { 10, 14 } ]
 
 // X_0^D(N) is given in GR06 (has genus 1) and X has a rational point
     // genus 0
-for triple in [ [*6, 13, {2,3} *] ] do
+for triple in [ [* 6, 5,{ 6 }*], 
+    [* 6, 5,{ 2, 3 }*],
+    [* 6, 5, { 2, 5 } *],
+    [* 6, 7,{ 2, 3 }*],
+    [* 6, 7,{ 3, 7 }*],
+    [* 6, 13,{ 3 }*],
+    [*6, 13, {2,3} *],
+    [* 10, 3,{ 2, 3 }*] ] do
     Append(~genus_0_AL_quotients_rat_pts,triple);
     Exclude(~genus_0_AL_quotients_unknown_rat_pts,triple);
 end for;

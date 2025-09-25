@@ -1,19 +1,8 @@
-// The list of all $55$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for 
+// The list of all $48$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for 
 // which we do not prove whether $X_0^D(N)/W$ has a rational point.
 
-genus_0_AL_quotients_unknown_rat_pts :=  [ [* 6, 5,
-    { 6 }
-*], [* 6, 5,
-    { 2, 3 }
-*], [* 6, 5,
-    { 2, 5 }
-*], [* 6, 7,
-    { 2, 3 }
-*], [* 6, 7,
-    { 3, 7 }
-*], [* 6, 13,
-    { 3 }
-*], [* 6, 25,
+genus_0_AL_quotients_unknown_rat_pts :=  [ 
+     [* 6, 25,
     { 2, 75 }
 *], [* 6, 25,
     { 6, 25 }
@@ -31,8 +20,6 @@ genus_0_AL_quotients_unknown_rat_pts :=  [ [* 6, 5,
     { 2, 21, 33 }
 *], [* 6, 77,
     { 6, 11, 14 }
-*], [* 10, 3,
-    { 2, 3 }
 *], [* 10, 7,
     { 2, 5 }
 *], [* 10, 7,

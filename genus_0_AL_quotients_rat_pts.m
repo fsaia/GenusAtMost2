@@ -1,4 +1,4 @@
-// The list of all $643$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` 
+// The list of all $650$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` 
 // for which we prove $X_0^D(N)/W$ has a rational point.
 
 genus_0_AL_quotients_rat_pts :=  [ [* 6, 1,
@@ -10,7 +10,13 @@ genus_0_AL_quotients_rat_pts :=  [ [* 6, 1,
 *], [* 6, 1,
     { 2, 3 }
 *], [* 6, 5,
+    { 6 }
+*], [* 6, 5,
     { 30 }
+*], [* 6, 5,
+    { 2, 3 }
+*], [* 6, 5,
+    { 2, 5 }
 *], [* 6, 5,
     { 2, 15 }
 *], [* 6, 5,
@@ -25,6 +31,10 @@ genus_0_AL_quotients_rat_pts :=  [ [* 6, 1,
     { 42 }
 *], [* 6, 7,
     { 2, 21 }
+*], [* 6, 7,
+    { 2, 3 }
+*], [* 6, 7,
+    { 3, 7 }
 *], [* 6, 7,
     { 3, 14 }
 *], [* 6, 7,
@@ -45,6 +55,8 @@ genus_0_AL_quotients_rat_pts :=  [ [* 6, 1,
     { 2, 3, 11 }
 *], [* 6, 13,
     { 78 }
+*], [* 6, 13,
+    { 3 }
 *], [* 6, 13,
     { 2, 3 }
 *], [* 6, 13,
@@ -271,6 +283,8 @@ genus_0_AL_quotients_rat_pts :=  [ [* 6, 1,
     { 2, 5 }
 *], [* 10, 3,
     { 30 }
+*], [* 10, 3,
+    { 2, 3 }
 *], [* 10, 3,
     { 2, 5 }
 *], [* 10, 3,
