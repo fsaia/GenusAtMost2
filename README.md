@@ -68,9 +68,9 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `genus_0_AL_quotients_no_rat_pts.m`: The list of all $81$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we prove $X_0^D(N)/W$ has no rational points.
 
-- `genus_0_AL_quotients_rat_pts.m`: The list of all $643$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we prove $X_0^D(N)/W$ has a rational point.
+- `genus_0_AL_quotients_rat_pts.m`: The list of all $650$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we prove $X_0^D(N)/W$ has a rational point.
 
-- `genus_0_AL_quotients_unknown_rat_pts.m`: The list of all $55$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
+- `genus_0_AL_quotients_unknown_rat_pts.m`: The list of all $48$ triples $[D,N,\text{gens}]$ in `genus_0_AL_quotients.m` for which we do not prove whether $X_0^D(N)/W$ has a rational point.
 
 - `genus_1_AL_quotients_no_rat_pts.m`: The list of all $154$ triples $[D,N,\text{gens}]$ in `genus_1_AL_quotients.m` for which we prove $X_0^D(N)/W$ has no rational points.
 
