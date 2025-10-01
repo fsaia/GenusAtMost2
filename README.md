@@ -1,5 +1,5 @@
 # GenusAtMost2
-This is a repository for Magma code related to the paper "Shimura curve Atkin--Lehner quotients of genus at most two" by Oana Padurariu and Frederick Saia.
+This is a repository for Magma code related to the paper "Shimura curve Atkin--Lehner quotients of genus at most two" by Oana Padurariu and Frederick Saia ([arXiv:2509.25368](https://arxiv.org/abs/2509.25368)).
 
 
 ## Main Files
