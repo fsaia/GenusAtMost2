@@ -46,9 +46,7 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `ribet_isog.m`: Code for computing isogeny factors of the Jacobian of an Atkin-Lehner quotient $X_0^D(N)/W$ using Ribet's isogeny.
 
-- `aut_checks.m`: This file contains a function which uses results from Kontogeorgis--Rotger 2008 to prove certain curves $X_0^D(N)$ have no non-Atkin--Lehner automorphisms.
-
-- `all_atkin_lehner_10k.m`: List of $4718$ pairs $(D,N)$, all with $DN < 10000$$ for which it is proven that all automorphisms of $X_0^D(N)/W$ are Atkin--Lehner for each $W \leq W_0(D,N)$ in work of Mercuri--Padurariu--Saia--Stirpe 2025. 
+- `no_involution_star_pairs_10k.m`: List of all $4378$ of the $4830$ pairs $(D,N)$ with $D>1$ an indefinite quaternion discriminant over $\mathbb{Q}$, $N$ a positive integer which is squarefree and coprime to $D$, $DN$ odd, and $DN < 10000$ for which it is proven in Mercuri--Padurariu--Saia--Stirpe 2025 that $X_0^D(N)^*$ has no non-trivial involutions using point counts with a result of González.
 
 
 
