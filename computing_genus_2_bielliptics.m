@@ -8,6 +8,8 @@ load "genus_1_AL_quotients.m";
 load "AL_identifiers.m";
 
 
+print "computing AL bielliptics...";
+
 // initializing genus_2_bielliptics: list of triples [C, E1, E2], where each of 
 // C, E1, and E2 gives an Atkin--Lehner quotient X_0^D(N) (of genera 2, 1, and 1), 
 // respectively, as a triple [* D, N, gens *] with W = <gens> <= W_0(D,N), such that 
@@ -64,25 +66,19 @@ end for;
 
 genus_2_remaining_bielliptic_candidates := [C : C in genus_2_AL_quotients | IsEmpty([L : L in (genus_2_bielliptics_one_AL cat genus_2_bielliptics_two_AL) | L[1] eq C])];
 
-load "all_atkin_lehner_10k.m";
-load "aut_checks.m";
+load "no_involution_star_pairs_10k.m";
+
+print "using automorphisms theorem...";
 
 for C in genus_2_remaining_bielliptic_candidates do
 	D := C[1];
 	N := C[2];
 
-	if IsSquarefree(N) then 
-		if IsOdd(D*N) then 
-			if [D,N] in all_atkin_lehner_10k then 
-				Exclude(~genus_2_remaining_bielliptic_candidates,C);
-			end if;
-		else 
-			if all_atkin_lehner_KR_no_point_counts(D,N) eq true then
-				Exclude(~genus_2_remaining_bielliptic_candidates,C);
-			end if;
-		end if;
+	if [D,N] in no_involution_star_pairs_10k then 
+		Exclude(~genus_2_remaining_bielliptic_candidates,C);
 	end if;
 end for; 
+
 
 
 // For remaining genus 2 curves, we check for simplicity of Jacobians to 
@@ -92,92 +88,99 @@ end for;
 // so this only will tell us that this curve
 // is not bielliptic over Q (but perhaps it is geometrically bielliptic). 
 
-load "ribet_isog.m";
+// skipped_indices := [240,678,705,736,737,749,779,782,867];
+// load "ribet_isog.m";
+
+// print "using Ribet's isogeny...";
+
+// // SetOutputFile("ribet_excluded.m");
+// // print "ribet_excluded := [";
+// // UnsetOutputFile();
+
+// start_index := 1;
+// c := start_index - 1;
+
+// for X in [X : X in genus_2_remaining_bielliptic_candidates | Index(genus_2_remaining_bielliptic_candidates,X) ge start_index] do 
+	
+// 	print X;
+// 	c := c+1;
+// 	start_time := Cputime();
+
+// 	print "step out of 941: ", c;
+	
+// 	D := X[1];
+// 	N := X[2];
+// 	gens := X[3];
+
+
+// 	// we first try to compute the isogeny factors of the Jacobian of X using modular symbols
+// 	// in level D*N
+// 	M := ModularSymbols(D*N,2,-1); // modular symbols of level D*N, weight 2
+//                                // trivial character, and sign -1 over \Q
+//                                // -1 as sign picks out just 
+//                                // cusp forms with mult 1
+//     Snew := NewSubspace(CuspidalSubspace(M));
+//     ALdecomp := AtkinLehnerDecomposition(Snew);
+
+//     compatible_symbols_list := [];
+
+//     for V in ALdecomp do
+//         d := Dimension(V);  
+//         if d le 2 then  
+// 	        print V;
+// 	        if IsCompatible(D,signpattern(V),gens) then 
+// 	            print "above V is compatible, dimension ", d;
+// 	            Append(~compatible_symbols_list,V);
+// 	            // since we know the Jacobian has dimension 2, finding
+// 	            // just one isogeny factor is sufficient
+// 	            break;
+// 	        end if;
+//         end if;
+//     end for;
+
+// 	if not IsEmpty(compatible_symbols_list) then 
+// 		M := compatible_symbols_list[1];
+// 		if Dimension(M) eq 2 then 
+// 			if IsIrreducible(M) then 
+// 				print "excluded X";
+// 				SetOutputFile("ribet_excluded.m");
+// 				print X, ",";
+// 				UnsetOutputFile();
+// 			end if;
+// 		end if;
+
+// 	// if a Jacobian factor was not found in level D*N, we perform a brute
+// 	// force Ribet isogeny decomposition computation to get the isogeny factors 
+// 	else 
+// 		print "trying brute force check";
+// 		X_isog_factors := IsogClassALQuotient(D,N,gens);
+
+// 		// if Jac(X) is simple, we know X is not bielliptic
+// 		if Dimension(X_isog_factors[1]) eq 2 then 
+// 			print "excluded X";
+// 			SetOutputFile("ribet_excluded.m");
+// 			print X, ",";
+// 			UnsetOutputFile();
+// 		end if; 
+// 	end if; 
+
+// 	end_time := Cputime();
+
+// 	print "step time: ", end_time-start_time;
+
+// end for; 
 
 // SetOutputFile("ribet_excluded.m");
-// print "ribet_excluded := [";
+// print "];";
 // UnsetOutputFile();
-
-start_index := 1;
-c := start_index - 1;
-
-for X in [X : X in genus_2_remaining_bielliptic_candidates | Index(genus_2_remaining_bielliptic_candidates,X) ge start_index] do 
-	
-	print X;
-	c := c+1;
-	start_time := Cputime();
-
-	print "step out of 173: ", c;
-	
-	D := X[1];
-	N := X[2];
-	gens := X[3];
-
-
-	// we first try to compute the isogeny factors of the Jacobian of X using modular symbols
-	// in level D*N
-	M := ModularSymbols(D*N,2,-1); // modular symbols of level D*N, weight 2
-                               // trivial character, and sign -1 over \Q
-                               // -1 as sign picks out just 
-                               // cusp forms with mult 1
-    Snew := NewSubspace(CuspidalSubspace(M));
-    ALdecomp := AtkinLehnerDecomposition(Snew);
-
-    compatible_symbols_list := [];
-
-    for V in ALdecomp do
-        d := Dimension(V);  
-        if d le 2 then  
-	        print V;
-	        if IsCompatible(D,signpattern(V),gens) then 
-	            print "above V is compatible, dimension ", d;
-	            Append(~compatible_symbols_list,V);
-	            // since we know the Jacobian has dimension 2, finding
-	            // just one isogeny factor is sufficient
-	            break;
-	        end if;
-        end if;
-    end for;
-
-	if not IsEmpty(compatible_symbols_list) then 
-		M := compatible_symbols_list[1];
-		if Dimension(M) eq 2 then 
-			if IsIrreducible(M) then 
-				print "excluded X";
-				SetOutputFile("ribet_excluded.m");
-				print X, ",";
-				UnsetOutputFile();
-			end if;
-		end if;
-
-	// if a Jacobian factor was not found in level D*N, we perform a brute
-	// force Ribet isogeny decomposition computation to get the isogeny factors 
-	else 
-		print "trying brute force check";
-		X_isog_factors := IsogClassALQuotient(D,N,gens);
-
-		// if Jac(X) is simple, we know X is not bielliptic
-		if Dimension(X_isog_factors[1]) eq 2 then 
-			print "excluded X";
-			SetOutputFile("ribet_excluded.m");
-			print X, ",";
-			UnsetOutputFile();
-		end if; 
-	end if; 
-
-	end_time := Cputime();
-
-	print "step time: ", end_time-start_time;
-
-end for; 
 
 
 load "ribet_excluded.m";
-genus_2_remaining_non_AL_bielliptic_candidates_final := [X : X in genus_2_remaining_bielliptic_candidates | not (X in ribet_excluded)];
+genus_2_remaining_non_AL_bielliptic_candidates := [X : X in genus_2_remaining_bielliptic_candidates | not (X in ribet_excluded)];
 
-SetOutputFile("genus_2_remaining_non_AL_bielliptic_candidates_final.m");
-print "genus_2_remaining_non_AL_bielliptic_candidates_final := [";
-print genus_2_remaining_non_AL_bielliptic_candidates_final;
+SetOutputFile("genus_2_remaining_non_AL_bielliptic_candidates.m");
+print "genus_2_remaining_non_AL_bielliptic_candidates := [";
+print genus_2_remaining_non_AL_bielliptic_candidates;
 print ";";
 UnsetOutputFile();
 
