@@ -26,7 +26,7 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `unknown_non_elliptic_fixed_pt_fld_checks.m`: The work in this file continues the work done in `unknown_non_elliptic_eqn_computations.m`, performing the checks done in `non_elliptic_fixed_pt_fld_checks.m` for non-elliptic candidate models in hopes of excluding all candidates and thus proving that a given genus $1$ quotient $X_0^D(N)/W$ has a rational point.
 
-- `computing_genus_2_bielliptics.m`: In this file, we compute Atkin--Lehner quotients $X_0^D(N)$ which are genus $2$ and have at least one bielliptic Atkin--Lehner quotient. We also prove that many other genus $2$ quotients are not bielliptic.
+- `computing_genus_2_bielliptics.m`: In this file, we compute Atkin--Lehner quotients $X_0^D(N)$ which are genus $2$ and have at least one bielliptic Atkin--Lehner quotient. We also prove that many other genus $2$ quotients are not bielliptic by showing the corresponding Jacobian is simple.
 
 - `computing_genus_2_bielliptic_eqns.m`: Code for computing models of genus $2$ Atkin--Lehner quotients which have at least one bielliptic Atkin--Lehner involution.
 
@@ -96,7 +96,7 @@ This is a repository for Magma code related to the paper "Shimura curve Atkin--L
 
 - `genus_2_bielliptics_two_AL.m`: The list of all $388$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has exactly two bielliptic involutions which are Atkin--Lehner.
 
-- `genus_2_remaining_non_AL_bielliptic_candidates_final.m`: The list of all $76$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has no bielliptic involutions which are Atkin--Lehner and we do not prove whether $X_0^D(N)/W$ is bielliptic.
+- `genus_2_remaining_non_AL_bielliptic_candidates.m`: The list of all $469$ triples $[D,N,\text{gens}]$ in `genus_2_AL_quotients.m` so that the corresponding curve $X_0^D(N)$ has no bielliptic involutions which are Atkin--Lehner and we do not prove whether $X_0^D(N)/W$ is bielliptic.
 
 - `genus_2_bielliptics_eqn_determined.m`: The list of all $405$ triples $[D,N,\text{gens}]$ appearing in either `genus_two_bielliptics_one_AL.m` or in `genus_two_bielliptics_two_AL.m` for which we determine a model for the corresponding curve $X_0^D(N)/W$ over $\mathbb{Q}$. 
 
